@@ -1,7 +1,10 @@
-import { initHeader } from './header.js';
+export function initMain() {
+    const main = document.createElement("main");
+    const wrapper = document.createElement("div");
 
-export function initApp() {
-    initHeader();
+    main.classList.add("main");
+    wrapper.classList.add("wrapper");
+
+    main.append(wrapper);
+    document.body.append(main);
 }
-
-initApp();
