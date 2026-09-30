@@ -1,3 +1,5 @@
+@import "header.css";
+
 /* ============ RESET ============ */
 
 *,
@@ -17,8 +19,15 @@ body {
 }
 
 body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+    background-image: url('/img/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 img,
@@ -51,4 +60,24 @@ a {
 ul,
 ol {
     list-style: none;
+}
+
+/*============ FONTS ==========*/
+
+@font-face {
+    font-family: 'PunishSinnerHorror';
+    src: url('../fonts/PunishSinnerHorror.woff2') format('woff2'),
+        url('../fonts/PunishSinnerHorror.woff')  format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GamePaused';
+    src: url('../fonts/GamePaused.woff2') format('woff2'),
+        url('../fonts/GamePaused.woff')  format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
