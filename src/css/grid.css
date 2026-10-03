@@ -8,9 +8,12 @@
   margin: 0 auto;
   padding: 20px;
   box-sizing: border-box;
+
+  perspective: 1100px;
 }
 
 .card {
+  position: relative;
   width: 100%;
   aspect-ratio: 1 / 1;
 
@@ -18,10 +21,30 @@
   border: 2px solid rgba(255, 179, 0, 0.6);
   border-radius: 12px;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
+  overflow: hidden;
+
+  transform-style: preserve-3d;
+  transform: rotateX(var(--ry, 0deg)) rotateY(var(--rx, 0deg));
+  transition: transform .5s cubic-bezier(.2,.9,.2,1),
+              box-shadow .4s;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    220px 220px at var(--mx, 30%) var(--my, 20%),
+    rgba(255, 255, 255, .55),
+    rgba(255, 255, 255, 0) 60%
+  );
+  opacity: var(--gloss, .4);
+  transition: opacity .3s;
+  pointer-events: none;
+  z-index: 2;
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 0 15px rgba(255, 179, 0, 0.6);
+  box-shadow: 0 0 20px rgba(255, 179, 0, 0.7);
 }
