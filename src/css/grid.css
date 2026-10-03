@@ -36,7 +36,7 @@
   border-radius: inherit;
   background: radial-gradient(
     220px 220px at var(--mx, 30%) var(--my, 20%),
-    rgba(255, 255, 255, .55),
+    rgba(255, 230, 121, 0.3),
     rgba(255, 255, 255, 0) 60%
   );
   opacity: var(--gloss, .4);
@@ -47,4 +47,29 @@
 
 .card:hover {
   box-shadow: 0 0 20px rgba(255, 179, 0, 0.7);
+}
+
+.card-back {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(10, 20, 39, 0.6);
+  overflow: hidden;
+  border-radius: inherit;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-back::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../../img/spiderweb.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.5;
+  pointer-events: none;
 }

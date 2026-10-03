@@ -8,6 +8,14 @@ export function initGrid(wrapper) {
     const card = document.createElement("div");
     card.classList.add("card");
     card.dataset.index = i;
+
+    const back = document.createElement("div");
+    back.classList.add("card-back");
+
+    const front = document.createElement("div");
+    front.classList.add("card-front");
+
+    card.append(back, front);
     grid.append(card);
   }
 
