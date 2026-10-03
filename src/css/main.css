@@ -2,8 +2,8 @@
     flex: 1;
     width: 100%;
     max-width: 1240px;
-    height: calc(100vh - 80px - 60px);
-    margin: 30px auto;
+    height: calc(100vh - 70px - 80px);
+    margin: 20px auto;
 
     background: rgba(27, 54, 104, 0.1);
     backdrop-filter: blur(8px);

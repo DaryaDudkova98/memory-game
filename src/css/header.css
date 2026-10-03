@@ -48,3 +48,70 @@
         0 0 25px #ffb300,
         0 0 50px #ff8c00;
 }
+
+/*========= STATS ========*/
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 10px;
+  font-family: 'GamePaused';
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+}
+
+.stats__moves,
+.stats__matches {
+  position: relative;
+  padding: 6px 18px;
+  color: #fff7d6;
+  background: rgba(30, 5, 5, 0.9);
+  clip-path: polygon(
+    8px 0, 100% 0,
+    100% calc(100% - 8px), calc(100% - 8px) 100%,
+    0 100%, 0 8px
+  );
+  text-shadow:
+    0 0 4px rgba(255, 94, 0, 0.9),
+    0 0 10px rgba(165, 0, 0, 0.7);
+  animation: hud-pulse 2.5s ease-in-out infinite;
+}
+
+.stats__moves::before,
+.stats__matches::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(165, 0, 0, 0.7);
+  clip-path: polygon(
+    8px 0, 100% 0,
+    100% calc(100% - 8px), calc(100% - 8px) 100%,
+    0 100%, 0 8px
+  );
+  padding: 1px;
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.stats__matches {
+  animation-delay: 1.2s;
+}
+
+@keyframes hud-pulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 4px rgba(165, 0, 0, 0.6));
+  }
+  50% {
+    filter: drop-shadow(0 0 12px rgba(255, 94, 0, 0.8));
+  }
+}

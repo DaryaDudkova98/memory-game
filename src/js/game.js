@@ -1,6 +1,10 @@
+import { resetStats, incMoves, incMatches } from "./stats.js";
+
 const FLIP_BACK_DELAY = 2000;
 
 export function initGame(grid) {
+  resetStats();
+
   let firstCard = null;
   let lock = false;
 
@@ -18,9 +22,12 @@ export function initGame(grid) {
       return;
     }
 
+    incMoves();
+
     if (firstCard.dataset.pair === card.dataset.pair) {
       firstCard.classList.add("matched");
       card.classList.add("matched");
+      incMatches();
       firstCard = null;
 
       checkWin(grid);
