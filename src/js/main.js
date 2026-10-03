@@ -7,4 +7,6 @@ export function initMain() {
 
     main.append(wrapper);
     document.body.append(main);
+
+    return wrapper;
 }

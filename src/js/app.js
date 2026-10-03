@@ -1,9 +1,11 @@
 import { initHeader } from './header.js';
 import { initMain } from './main.js';
+import { initGrid } from './grid.js';
 
 export function initApp() {
     initHeader();
-    initMain();
+     const wrapper = initMain();
+    initGrid(wrapper);
 }
 
 initApp();
