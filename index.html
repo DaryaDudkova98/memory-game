@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="img/iconify--joker.svg">
+    <script>
+        if (location.hostname.includes('github.io')) {
+            document.write('<base href="/memory-game/">');
+        }
+    </script>
     <link rel="stylesheet" href="src/css/style.css">
     <title>Memo</title>
 </head>
