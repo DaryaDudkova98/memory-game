@@ -2,7 +2,7 @@ import { resetStats, incMoves, incMatches } from "./stats.js";
 import { showWinModal } from "./modalWin.js";
 import { initGrid } from "./grid.js";
 
-const FLIP_BACK_DELAY = 2000;
+const FLIP_BACK_DELAY = 1200;
 
 export function initGame(grid) {
   resetStats();

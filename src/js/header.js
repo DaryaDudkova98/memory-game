@@ -1,5 +1,6 @@
 import { subscribe, resetStats } from "./stats.js";
 import { initGrid } from "./grid.js";
+import { showLeaderboardModal } from "./modalLeaderboard.js";
 
 export function initHeader() {
     const header = document.createElement("header");
@@ -13,10 +14,11 @@ export function initHeader() {
     const movesEl = document.createElement("span");
     const matchesEl = document.createElement("span");
     
+    const TOTAL_PAIRS = 8;
 
     subscribe(({ moves, matches }) => {
         movesEl.textContent = `moves: ${moves}`;
-        matchesEl.textContent = `matches: ${matches}`;
+        matchesEl.textContent = `matches: ${matches} / ${TOTAL_PAIRS}`;
     });
 
     header.classList.add("header");
@@ -43,6 +45,10 @@ export function initHeader() {
 
         oldGrid.remove();
         initGrid(wrapper);
+    });
+
+    btnLeaderBoard.addEventListener("click", () => {
+        showLeaderboardModal();
     });
 
     stats.append(movesEl, matchesEl);
