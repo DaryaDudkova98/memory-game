@@ -32,6 +32,7 @@ export function initGame(grid) {
       firstCard.classList.add("matched");
       card.classList.add("matched");
       incMatches();
+      playSound("match");
       firstCard = null;
 
       checkWin(grid);
@@ -57,6 +58,7 @@ export function initGame(grid) {
   });
 
   grid.addEventListener("game:win", () => {
+    playSound("win");
     showWinModal({
       onRestart: () => restartGame(),
     });

@@ -1,0 +1,59 @@
+.settings {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.settings__row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.04);
+  transition: background 0.2s;
+}
+
+.settings__row:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.settings__checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  border: 2px solid rgba(165, 0, 0, 0.7);
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.settings__checkbox:checked {
+  background: rgba(165, 0, 0, 0.9);
+  border-color: #ff5e00;
+  box-shadow: 0 0 10px rgba(255, 94, 0, 0.5);
+}
+
+.settings__checkbox:checked::after {
+  content: "✓";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff7d6;
+  font-size: 14px;
+  font-weight: bold;
+  text-shadow: 0 0 4px rgba(255, 94, 0, 0.8);
+}
+
+.settings__label {
+  color: #fff7d6;
+  font-size: 15px;
+  letter-spacing: 0.05em;
+}
