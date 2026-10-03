@@ -1,0 +1,15 @@
+{
+  "zombie": {
+    "name": "Zombies",
+    "cards": [
+      { "id": "zombie1",    "src": "img/zombies/zombie1.jpg" },
+      { "id": "zombie2",     "src": "img/zombies/zombie2.jpg" },
+      { "id": "zombie3",     "src": "img/zombies/zombie3.jpg" },
+      { "id": "zombie4",     "src": "img/zombies/zombie4.jpg" },
+      { "id": "zombie5",     "src": "img/zombies/zombie5.jpg" },
+      { "id": "zombie6",   "src": "img/zombies/zombie6.jpg" },
+      { "id": "zombie7",    "src": "img/zombies/zombie7.jpg" },
+      { "id": "zombie8",    "src": "img/zombies/zombie8.jpg" }
+    ]
+  }
+}
