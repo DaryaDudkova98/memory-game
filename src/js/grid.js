@@ -2,6 +2,8 @@ import { initTilt } from "./tilt.js";
 import { loadThemes } from "./themes.js";
 import { buildDeck } from "./deck.js";
 import { createCard } from "./card.js";
+import { initGame } from "./game.js";
+
 
 const DEFAULT_THEME = "zombie";
 
@@ -21,6 +23,8 @@ export async function initGrid(wrapper, themeKey = DEFAULT_THEME) {
   });
 
   wrapper.append(grid);
+  initGame(grid);
+  initTilt(grid.querySelectorAll(".card"));
   initTilt(grid.querySelectorAll(".card"));
 
   return grid;

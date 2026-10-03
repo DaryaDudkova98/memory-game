@@ -21,18 +21,5 @@ export function createCard(item, index) {
 
   card.append(back, front);
 
-  card.addEventListener("click", () => {
-    if (card.classList.contains("flipped")) return;
-    card.classList.add("flipped");
-    card.dispatchEvent(new CustomEvent("card:flip", { bubbles: true }));
-  });
-
-  card.addEventListener("keydown", (e) => {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      card.click();
-    }
-  });
-
   return card;
 }
