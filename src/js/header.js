@@ -1,4 +1,5 @@
-import { subscribe } from "./stats.js";
+import { subscribe, resetStats } from "./stats.js";
+import { initGrid } from "./grid.js";
 
 export function initHeader() {
     const header = document.createElement("header");
@@ -32,6 +33,17 @@ export function initHeader() {
     btnNewGame.textContent = "Start over";
     logo.textContent = "Memo";
     btnLeaderBoard.textContent = "Leaderboard";
+
+    btnNewGame.addEventListener("click", () => {
+        resetStats();
+
+        const wrapper = document.querySelector(".wrapper");
+        const oldGrid = document.querySelector(".grid");
+        if (!wrapper || !oldGrid) return;
+
+        oldGrid.remove();
+        initGrid(wrapper);
+    });
 
     stats.append(movesEl, matchesEl);
     inner.append(btnNewGame, logo, btnLeaderBoard);
