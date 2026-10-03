@@ -3,11 +3,9 @@ import { loadThemes } from "./themes.js";
 import { buildDeck } from "./deck.js";
 import { createCard } from "./card.js";
 import { initGame } from "./game.js";
+import { getCurrentTheme } from "./theme.js";
 
-
-const DEFAULT_THEME = "zombie";
-
-export async function initGrid(wrapper, themeKey = DEFAULT_THEME) {
+export async function initGrid(wrapper, themeKey = getCurrentTheme()) {
   const themes = await loadThemes();
   const theme = themes[themeKey];
 
