@@ -25,7 +25,7 @@ body {
     flex-direction: column;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-    background-image: url('/img/background.jpg');
+    background-image: url('../../img/background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
