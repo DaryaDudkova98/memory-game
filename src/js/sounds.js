@@ -17,7 +17,6 @@ export function initSounds() {
     muted = false;
   }
 
-  // загружаем ВСЕ звуки из SOUNDS в кэш
   for (const [key, url] of Object.entries(SOUNDS)) {
     const audio = new Audio(url);
     audio.preload = "auto";

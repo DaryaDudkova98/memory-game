@@ -31,7 +31,6 @@ function createModal() {
   el.append(backdrop, window);
 
   backdrop.addEventListener("click", closeModal);
-
   closeBtn.addEventListener("click", closeModal);
 
   document.addEventListener("keydown", (e) => {
@@ -52,14 +51,14 @@ export function openModal({ title = "", content = "", actions = [] } = {}) {
   titleEl.textContent = title;
   titleEl.hidden = !title;
 
-  bodyEl.innerHTML = "";
+  bodyEl.replaceChildren();
   if (typeof content === "string") {
     bodyEl.textContent = content;
   } else if (content instanceof Node) {
     bodyEl.append(content);
   }
 
-  footerEl.innerHTML = "";
+  footerEl.replaceChildren();
   actions.forEach(({ label, onClick, variant = "default" }) => {
     const btn = document.createElement("button");
     btn.classList.add("modal__btn", `modal__btn--${variant}`);
