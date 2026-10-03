@@ -25,7 +25,6 @@ export async function initGrid(wrapper, themeKey = DEFAULT_THEME) {
   wrapper.append(grid);
   initGame(grid);
   initTilt(grid.querySelectorAll(".card"));
-  initTilt(grid.querySelectorAll(".card"));
 
   return grid;
 }
