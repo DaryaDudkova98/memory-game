@@ -1,4 +1,6 @@
 import { resetStats, incMoves, incMatches } from "./stats.js";
+import { showWinModal } from "./modalWin.js";
+import { initGrid } from "./grid.js";
 
 const FLIP_BACK_DELAY = 2000;
 
@@ -51,12 +53,29 @@ export function initGame(grid) {
       card.click();
     }
   });
+
+  grid.addEventListener("game:win", () => {
+    showWinModal({
+      onRestart: () => restartGame(),
+    });
+  });
 }
 
 function checkWin(grid) {
   const total = grid.querySelectorAll(".card").length;
   const matched = grid.querySelectorAll(".card.matched").length;
+  console.log("checkWin:", matched, "/", total);
   if (matched === total) {
+    console.log("WIN!");
     grid.dispatchEvent(new CustomEvent("game:win", { bubbles: true }));
   }
+}
+
+function restartGame() {
+  const wrapper = document.querySelector(".wrapper");
+  const oldGrid = document.querySelector(".grid");
+  if (!wrapper || !oldGrid) return;
+
+  oldGrid.remove();
+  initGrid(wrapper);
 }

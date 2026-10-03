@@ -26,3 +26,7 @@ export function incMatches() {
   matches++;
   emit();
 }
+
+export function getStats() {
+  return { moves, matches };
+}
