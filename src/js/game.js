@@ -1,6 +1,7 @@
 import { resetStats, incMoves, incMatches } from "./stats.js";
 import { showWinModal } from "./modalWin.js";
 import { initGrid } from "./grid.js";
+import { playSound } from "./sounds.js";
 
 const FLIP_BACK_DELAY = 1200;
 
@@ -18,6 +19,7 @@ export function initGame(grid) {
     if (card.classList.contains("matched")) return;
 
     card.classList.add("flipped");
+    playSound("click");
 
     if (!firstCard) {
       firstCard = card;
@@ -64,9 +66,7 @@ export function initGame(grid) {
 function checkWin(grid) {
   const total = grid.querySelectorAll(".card").length;
   const matched = grid.querySelectorAll(".card.matched").length;
-  console.log("checkWin:", matched, "/", total);
   if (matched === total) {
-    console.log("WIN!");
     grid.dispatchEvent(new CustomEvent("game:win", { bubbles: true }));
   }
 }
