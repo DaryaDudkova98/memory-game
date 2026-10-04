@@ -1,0 +1,21 @@
+.wrapper {
+    flex: 1;
+    width: 100%;
+    max-width: 1240px;
+    height: calc(100vh - 70px - 80px);
+    margin: 20px auto;
+
+    background: rgba(27, 54, 104, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 2px solid rgba(19, 216, 241, 0.7);
+
+    border-radius: 40px;
+    box-shadow:
+        0 0 10px rgba(21, 201, 201, 0.5),
+        0 0 30px rgba(21, 84, 201, 0.3),
+        0 0 60px rgba(21, 84, 201, 0.1),
+        inset 0 0 20px rgba(21, 84, 201, 0.1);
+    animation: wrapper-glow 3s ease-in-out infinite alternate;
+}

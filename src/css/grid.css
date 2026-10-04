@@ -1,0 +1,132 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+
+  width: min(100%, calc(100vh - 160px));
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+
+  perspective: 1100px;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 179, 0, 0.6);
+  border-radius: 12px;
+  cursor: pointer;
+
+
+  transform-style: preserve-3d;
+  transform:
+    rotateX(var(--ry, 0deg))
+    rotateY(calc(var(--rx, 0deg) + var(--flip, 0deg)));
+  transition: transform .5s cubic-bezier(.2,.9,.2,1),
+              box-shadow .4s;
+}
+
+.card.flipped {
+  --flip: 180deg;
+}
+
+.card-back {
+  background-color: rgba(10, 20, 39, 0.6);
+}
+
+.card-front {
+  background-color: #000;
+  transform: rotateY(180deg);
+}
+
+.card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    220px 220px at var(--mx, 30%) var(--my, 20%),
+    rgba(255, 230, 121, 0.3),
+    rgba(255, 255, 255, 0) 60%
+  );
+  opacity: var(--gloss, .4);
+  transition: opacity .3s;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.card:hover {
+  box-shadow: 0 0 20px rgba(255, 179, 0, 0.7);
+}
+
+.card-back,
+.card-front {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.card-back::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../../img/spiderweb.png") center / cover no-repeat;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.card.matched {
+  border-color: rgba(50, 255, 100, 0.9);
+  box-shadow:
+    0 0 15px rgba(50, 255, 100, 0.6),
+    0 0 30px rgba(50, 255, 100, 0.4),
+    inset 0 0 20px rgba(50, 255, 100, 0.2);
+  pointer-events: none;
+  animation: match-pop 0.6s cubic-bezier(.2,.9,.2,1);
+}
+
+@keyframes match-pop {
+  0% {
+    transform:
+      rotateX(var(--ry, 0deg))
+      rotateY(calc(var(--rx, 0deg) + var(--flip, 0deg)))
+      scale(1) rotate(0deg);
+  }
+  30% {
+    transform:
+      rotateX(var(--ry, 0deg))
+      rotateY(calc(var(--rx, 0deg) + var(--flip, 0deg)))
+      scale(1.12) rotate(-3deg);
+  }
+  60% {
+    transform:
+      rotateX(var(--ry, 0deg))
+      rotateY(calc(var(--rx, 0deg) + var(--flip, 0deg)))
+      scale(1.06) rotate(3deg);
+  }
+  100% {
+    transform:
+      rotateX(var(--ry, 0deg))
+      rotateY(calc(var(--rx, 0deg) + var(--flip, 0deg)))
+      scale(1) rotate(0deg);
+  }
+}

@@ -1,0 +1,90 @@
+@import "header.css";
+@import "main.css";
+@import "grid.css";
+@import "modal.css";
+@import "leaderboard.css";
+@import "btn-settings.css";
+
+/* ============ RESET ============ */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+
+    background: url('../../img/background.jpg') center / cover no-repeat fixed;
+}
+
+main {
+    flex: 1;
+}
+
+img,
+picture,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    color: inherit;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+/*============ FONTS ==========*/
+
+@font-face {
+    font-family: 'PunishSinnerHorror';
+    src: url('../fonts/PunishSinnerHorror.woff2') format('woff2'),
+        url('../fonts/PunishSinnerHorror.woff')  format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GamePaused';
+    src: url('../fonts/GamePaused.woff2') format('woff2'),
+        url('../fonts/GamePaused.woff')  format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

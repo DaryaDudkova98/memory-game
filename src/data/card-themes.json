@@ -1,0 +1,28 @@
+{
+  "zombie": {
+    "name": "Zombies",
+    "cards": [
+      { "id": "zombie1",    "src": "img/zombies/zombie1.jpg" },
+      { "id": "zombie2",     "src": "img/zombies/zombie2.jpg" },
+      { "id": "zombie3",     "src": "img/zombies/zombie3.jpg" },
+      { "id": "zombie4",     "src": "img/zombies/zombie4.jpg" },
+      { "id": "zombie5",     "src": "img/zombies/zombie5.jpg" },
+      { "id": "zombie6",   "src": "img/zombies/zombie6.jpg" },
+      { "id": "zombie7",    "src": "img/zombies/zombie7.jpg" },
+      { "id": "zombie8",    "src": "img/zombies/zombie8.jpg" }
+    ]
+  },
+  "witch": {
+    "name": "Witches",
+    "cards": [
+      { "id": "witch1",    "src": "img/witch/witch1.jpg" },
+      { "id": "witch2",     "src": "img/witch/witch2.jpg" },
+      { "id": "witch3",     "src": "img/witch/witch3.jpg" },
+      { "id": "witch4",     "src": "img/witch/witch4.jpg" },
+      { "id": "witch5",     "src": "img/witch/witch5.jpg" },
+      { "id": "witch6",   "src": "img/witch/witch6.jpg" },
+      { "id": "witch7",    "src": "img/witch/witch7.jpg" },
+      { "id": "witch8",    "src": "img/witch/witch8.jpg" }
+    ]
+  }
+}
